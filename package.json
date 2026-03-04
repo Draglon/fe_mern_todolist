@@ -24,7 +24,6 @@
     "react-dom": "^19.0.0",
     "redux-thunk": "^3.1.0",
     "sass": "^1.86.3",
-    "socket.io-client": "^4.8.1",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -49,11 +48,8 @@
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.4",
     "json-api-normalizer": "^1.0.4",
-    "luxon": "^3.7.1",
     "next-intl": "^4.0.2",
     "node-fetch": "^3.3.2",
-    "react-hook-form": "^7.55.0",
-    "react-phone-number-input": "^3.4.12",
     "react-redux": "^9.2.0",
     "react-remove-scroll": "^2.6.3",
     "redux": "^5.0.1",

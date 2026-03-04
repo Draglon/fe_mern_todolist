@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`todoList validation schema matches snapshot 1`] = `
+{
+  "default": {
+    "todo": undefined,
+  },
+  "fields": {
+    "todo": {
+      "default": undefined,
+      "label": undefined,
+      "meta": undefined,
+      "notOneOf": [],
+      "nullable": false,
+      "oneOf": [],
+      "optional": false,
+      "tests": [
+        {
+          "name": "required",
+          "params": undefined,
+        },
+      ],
+      "type": "string",
+    },
+  },
+  "label": undefined,
+  "meta": undefined,
+  "notOneOf": [],
+  "nullable": false,
+  "oneOf": [],
+  "optional": true,
+  "tests": [],
+  "type": "object",
+}
+`;
