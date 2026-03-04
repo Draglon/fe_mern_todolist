@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import fetchTodoList from "./operations/fetchTodoList";
-import createTodoList from "./operations/createTodoList";
-import deleteTodoList from "./operations/deleteTodoList";
+import createTodoListItem from "./operations/createTodoListItem";
+import updateTodoListItem from "./operations/updateTodoListItem";
+import deleteTodoListItem from "./operations/deleteTodoListItem";
 
 const initialState = {
   data: [],
@@ -11,7 +12,7 @@ const initialState = {
 };
 
 export const todoListSlice = createSlice({
-  name: "orders",
+  name: "todoList",
   initialState,
   extraReducers: (builder) => {
     builder.addCase(fetchTodoList.pending, (state) => {
@@ -28,30 +29,49 @@ export const todoListSlice = createSlice({
       state.error = action.payload;
     });
 
-    builder.addCase(createTodoList.pending, (state) => {
+    builder.addCase(createTodoListItem.pending, (state) => {
       state.status = "loading";
       state.error = null;
     });
-    builder.addCase(createTodoList.fulfilled, (state, action) => {
-      state.data = action.payload;
+    builder.addCase(createTodoListItem.fulfilled, (state, action) => {
+      state.data.push(action.payload);
       state.status = "loaded";
       state.error = null;
     });
-    builder.addCase(createTodoList.rejected, (state, action) => {
+    builder.addCase(createTodoListItem.rejected, (state, action) => {
       state.status = "error";
       state.error = action.payload;
     });
 
-    builder.addCase(deleteTodoList.pending, (state) => {
+    builder.addCase(updateTodoListItem.pending, (state) => {
       state.status = "loading";
       state.error = null;
     });
-    builder.addCase(deleteTodoList.fulfilled, (state, action) => {
+    builder.addCase(updateTodoListItem.fulfilled, (state, action) => {
+      state.data = state.data.map((item) => {
+        if (item._id === action.payload.id) {
+          item.todo = action.payload.todo
+        }
+        return item;
+      });
+      state.status = "loaded";
+      state.error = null;
+    });
+    builder.addCase(updateTodoListItem.rejected, (state, action) => {
+      state.status = "error";
+      state.error = action.payload;
+    });
+
+    builder.addCase(deleteTodoListItem.pending, (state) => {
+      state.status = "loading";
+      state.error = null;
+    });
+    builder.addCase(deleteTodoListItem.fulfilled, (state, action) => {
       state.data = state.data.filter((item) => item._id !== action.payload); 
       state.status = "loaded";
       state.error = null;
     });
-    builder.addCase(deleteTodoList.rejected, (state, action) => {
+    builder.addCase(deleteTodoListItem.rejected, (state, action) => {
       state.status = "error";
       state.error = action.payload;
     });

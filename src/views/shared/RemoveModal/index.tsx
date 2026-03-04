@@ -40,9 +40,6 @@ const RemoveTodoListItemModal = ({
           {title}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="modal__body">
-        <div>Body</div>
-      </Modal.Body>
       <Modal.Footer className="modal__footer">
         <Button
           className="modal__button--link"

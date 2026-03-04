@@ -13,14 +13,11 @@ const shared = {
     "password": "Password",
     "todo": "Todo",
     "modal": {
-      "removeProduct": {
-        "title": "Are you sure you want to remove this product?",
+      "updateItem": {
+        "title": "Are you sure you want to edit this item?",
       },
-      "removeParish": {
-        "title": "Are you sure you want to remove this parish?",
-      },
-      "removeOrder": {
-        "title": "Are you sure you want to remove this Order?",
+      "removeItem": {
+        "title": "Are you sure you want to remove this item?",
       }
     }
   },

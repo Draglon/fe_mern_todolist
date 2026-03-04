@@ -3,10 +3,11 @@ import { Form } from "react-bootstrap";
 
 type InputFieldProps = {
   id: string;
-  label: string;
+  label?: string;
   name: string;
   type: string;
   value: string;
+  placeholder?: string;
   touched: boolean | undefined;
   error: string | boolean | undefined;
   dataTestId: string;
@@ -19,6 +20,7 @@ const InputField = ({
   name,
   type,
   value,
+  placeholder,
   touched,
   error,
   onChange,
@@ -26,15 +28,18 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <Form.Group className="from__field">
-      <Form.Label className="from__label" htmlFor={id}>
-        {label}
-      </Form.Label>
+      {label && (
+        <Form.Label className="from__label" htmlFor={id}>
+          {label}
+        </Form.Label>
+      )}
       <Form.Control
         className="from__input"
         id={id}
         type={type}
         name={name}
         value={value}
+        placeholder={placeholder}
         onChange={onChange}
         isValid={touched && !error}
         data-testid={dataTestId}

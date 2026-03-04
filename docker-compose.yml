@@ -16,7 +16,7 @@ services:
     build: ../be_inventory
     container_name: backend
     ports:
-      - "4004:4004"
+      - "4000:4000"
     networks:
       - mern
     depends_on:

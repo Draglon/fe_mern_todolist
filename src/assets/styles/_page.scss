@@ -1,3 +1,9 @@
+.page {
+  padding: 30px 15px;
+  max-width: 1200px;
+  margin: 0 auto
+}
+
 .page__layout {
   background-color: var(--black);
   padding: 0;
@@ -29,7 +35,6 @@
 .page_content {
   background-color: var(--grey-lighter);
   flex: 0 0 100%;
-  padding: 50px 100px;
-  overflow: auto;
   width: 100%;
+  overflow: auto;
 }

@@ -6,21 +6,10 @@
 @use 'forms/input-field';
 @use 'button';
 @use 'modal';
-@use 'dropdown';
 
 // shared
-@use 'indicator';
-@use 'status';
-@use 'remove-button';
 @use 'header';
-@use 'logo';
-@use 'avatar';
-@use 'filter';
 @use 'page';
 @use 'login';
 @use 'signup';
-@use 'sidebar';
-@use 'product';
-@use 'products';
-@use 'orders';
-@use 'groups';
+@use 'todo-list';

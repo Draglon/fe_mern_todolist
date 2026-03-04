@@ -1,7 +1,8 @@
 import fetchTodoList from "./fetchTodoList";
-import createTodoList from "./createTodoList";
-import deleteTodoList from "./deleteTodoList";
+import createTodoListItem from "./createTodoListItem";
+import updateTodoListItem from "./updateTodoListItem";
+import deleteTodoListItem from "./deleteTodoListItem";
 
-const todoListOperations = [fetchTodoList, createTodoList, deleteTodoList];
+const todoListOperations = [fetchTodoList, createTodoListItem, updateTodoListItem, deleteTodoListItem];
 
 export default todoListOperations;
