@@ -1,0 +1,80 @@
+.modal {
+  .modal-content {
+    background-color: var(--white);
+    border-radius: 8px;
+    border: none;
+    position: relative;
+  }
+
+  .btn-close {
+    background-color: var(--grey-lighter);
+    box-shadow: 0 0 5px var(--grey-light);
+    border-radius: 50%;
+    color: var(--grey);
+    padding: 15px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    z-index: 100;
+    opacity: 1;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: var(--white);
+    }
+  }
+
+  &__header {
+    padding: 30px 30px 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__body {
+    padding: 0 30px;
+  }
+
+  &__footer {
+    background-color: var(--green);
+    display: flex;
+    gap: 15px;
+    padding: 20px 30px 30px;
+  }
+
+  &__button--link {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: var(--grey-lighter);
+    }
+  }
+
+  &__button--danger {
+    color: var(--red);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: var(--red);
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+  }
+}

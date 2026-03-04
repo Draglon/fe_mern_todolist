@@ -1,0 +1,135 @@
+.products {
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.products__table {
+	border-spacing: 0 15px;
+	border-collapse: separate;
+}
+
+.products__item {
+  & > td {
+    background-color: var(--white);
+    border-top: 1px solid var(--grey);
+    border-bottom: 1px solid var(--grey);
+    padding: 15px;
+
+    &:first-child {
+      border-left: 1px solid var(--grey);
+      border-radius: 4px 0 0 4px;
+    }
+    &:last-child {
+      border-right: 1px solid var(--grey);
+      border-radius: 4px 4px 0 0;
+    }
+  }
+
+  .products__indicator {
+    width: 70px;
+    padding: 15px 30px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .products__image {
+    width: 80px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .products__description {
+    font-size: 14px;
+  }
+
+  .products__serialNumber {
+    color: var(--grey-light);
+    font-size: 12px;
+  }
+
+  .products__status {
+    font-size: 12px;
+    width: 100px;
+  }
+
+  .products__period {
+    color: var(--grey);
+    font-size: 12px;
+    width: 140px;
+    span {
+      color: var(--grey-light);
+      display: inline-block;
+    }
+  }
+
+  .products__period-start {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+
+  .products__period-end {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+
+  .products__product-status {
+    color: var(--grey);
+    font-size: 12px;
+    width: 100px;
+  }
+
+  .products__price-usd {
+    color: var(--grey-light);
+    font-size: 10px;
+  }
+
+  .products__price-uah {
+    color: var(--grey);
+    font-size: 14px;
+  }
+
+  .products__group {
+    color: var(--grey);
+    font-size: 14px;
+  }
+
+  .products__fullName {
+    color: var(--grey);
+    font-size: 14px;
+  }
+
+  .products__parish {
+    color: var(--grey);
+    font-size: 14px;
+  }
+
+  .products__date-short {
+    color: var(--grey-light);
+    font-size: 10px;
+  }
+
+  .products__date-long {
+    color: var(--grey);
+    font-size: 12px;
+  }
+
+  .products__remove {
+    padding: 15px 30px 15px 15px;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  .products__icon-remove {
+    color: var(--grey);
+    cursor: pointer;
+    &:hover {
+      color: var(--red);
+    }
+  }
+}
+

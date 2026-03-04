@@ -1,0 +1,14 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  &__img {
+    margin-right: 15px;
+  }
+
+  &__text {
+    color: var(--green);
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,10 @@
+.btn-remove {
+  color: var(--grey-light);
+  border: none !important;
+  width: 30px;
+  height: 30px;
+
+  &:hover {
+    color: var(--red);
+  }
+}

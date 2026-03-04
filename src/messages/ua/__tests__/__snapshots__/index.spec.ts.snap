@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ua locale matches snapshot 1`] = `
+{
+  "LocaleSwitcher": {
+    "label": "Вибрати мову",
+    "locale": "{locale, select, ru {Російська} ua {Українська} en {Англійська} other {Unknown}}",
+  },
+  "Login": {
+    "layout": {
+      "description": "Вхід - опис",
+      "title": "Вхід",
+    },
+    "title": "Вхід",
+  },
+  "Registration": {
+    "description": "Будь ласка заповніть всі поля",
+    "form": {
+      "email": {
+        "errors": {
+          "required": "Будь ласка, введіть електронну пошту!",
+        },
+        "label": "Електронна пошта",
+        "placeholder": "Введіть електронну пошту",
+      },
+      "password": {
+        "errors": {
+          "maxLength": "Має містити не більше 20 символів",
+          "minLength": "Має містити щонайменше 6 символів",
+          "required": "Будь ласка, введіть пароль!",
+        },
+        "label": "Пароль",
+        "placeholder": "Введіть пароль",
+      },
+      "userName": {
+        "errors": {
+          "minLength": "Будь ласка, введіть своє ім'я користувача!",
+          "required": "Будь ласка, введіть своє ім'я користувача!",
+        },
+        "label": "Ім'я користувача",
+        "placeholder": "Введіть ім'я користувача",
+      },
+    },
+    "layout": {
+      "description": "Реєстрація сторінка - опис",
+      "title": "Реєстрація",
+    },
+    "title": "Реєстрація",
+  },
+  "TodoList": {
+    "layout": {
+      "description": "Список справ - опис",
+      "title": "Список справ",
+    },
+    "title": "Список справ",
+  },
+  "shared": {
+    "add": "Додати",
+    "cancel": "Відмінити",
+    "confirm": "Підтвердити",
+    "create": "Створити",
+    "email": "Електронна пошта",
+    "logIn": "Увійти",
+    "logout": "Вийти",
+    "modal": {
+      "removeOrder": {
+        "title": "Ви впевнені, що хочете видалити цю заказ?",
+      },
+      "removeParish": {
+        "title": "Ви впевнені, що хочете видалити цю парафію?",
+      },
+      "removeProduct": {
+        "title": "Ви впевнені, що хочете видалити цей продукт?",
+      },
+    },
+    "next": "Наступний",
+    "password": "Пароль",
+    "previous": "Попередній",
+    "product": "Продукту",
+    "profile": "Профіль",
+    "save": "Зберегти",
+    "search": "Пошук",
+    "settings": "Налаштування",
+    "signUp": "Реєстрація",
+    "status": {
+      "free": "В наявності",
+      "new": "Новий",
+      "repair": "Ремонт",
+      "reserved": "Зарезервовано",
+      "sold": "Проданий",
+      "used": "Б/У",
+    },
+  },
+}
+`;

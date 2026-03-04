@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`routes constants match snapshot 1`] = `
+{
+  "loginRoute": "/",
+  "registrationRoute": "/registration",
+  "todoListRoute": "/todo_list",
+}
+`;

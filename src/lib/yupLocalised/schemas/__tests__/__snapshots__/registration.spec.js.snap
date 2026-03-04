@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`registration validation schema matches snapshot 1`] = `
+{
+  "default": {
+    "email": undefined,
+    "password": undefined,
+  },
+  "fields": {
+    "email": {
+      "default": undefined,
+      "label": undefined,
+      "meta": undefined,
+      "notOneOf": [],
+      "nullable": false,
+      "oneOf": [],
+      "optional": false,
+      "tests": [
+        {
+          "name": "email",
+          "params": {
+            "regex": /\\^\\[a-zA-Z0-9\\.!#\\$%&'\\*\\+\\\\/=\\?\\^_\`\\{\\|\\}~-\\]\\+@\\[a-zA-Z0-9\\]\\(\\?:\\[a-zA-Z0-9-\\]\\{0,61\\}\\[a-zA-Z0-9\\]\\)\\?\\(\\?:\\\\\\.\\[a-zA-Z0-9\\]\\(\\?:\\[a-zA-Z0-9-\\]\\{0,61\\}\\[a-zA-Z0-9\\]\\)\\?\\)\\*\\$/,
+          },
+        },
+        {
+          "name": "required",
+          "params": undefined,
+        },
+      ],
+      "type": "string",
+    },
+    "password": {
+      "default": undefined,
+      "label": undefined,
+      "meta": undefined,
+      "notOneOf": [],
+      "nullable": false,
+      "oneOf": [],
+      "optional": false,
+      "tests": [
+        {
+          "name": "min",
+          "params": {
+            "min": 6,
+          },
+        },
+        {
+          "name": "max",
+          "params": {
+            "max": 72,
+          },
+        },
+        {
+          "name": "required",
+          "params": undefined,
+        },
+      ],
+      "type": "string",
+    },
+  },
+  "label": undefined,
+  "meta": undefined,
+  "notOneOf": [],
+  "nullable": false,
+  "oneOf": [],
+  "optional": true,
+  "tests": [],
+  "type": "object",
+}
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`navigation constants match snapshot 1`] = `
+{
+  "NAVIGATION_MENU": [
+    {
+      "href": "/orders",
+      "text": "Navigation.orders",
+    },
+    {
+      "href": "/groups",
+      "text": "Navigation.groups",
+    },
+    {
+      "href": "/products",
+      "text": "Navigation.products",
+    },
+    {
+      "href": "/users",
+      "text": "Navigation.users",
+    },
+    {
+      "href": "/settings",
+      "text": "Navigation.settings",
+    },
+  ],
+}
+`;

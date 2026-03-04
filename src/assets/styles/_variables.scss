@@ -1,0 +1,38 @@
+:root {
+  // colors
+  --transparent: rgba(255, 255, 255, 0);
+  --white: #fff;
+  --black: #000;
+  --grey: #666;
+  --grey-dark: #2B3C44;
+  --grey-light: #A0B1BA;
+  --grey-lighter: #F1F3F5;
+  --blue: #3e6691;
+  --red: #E83650;
+  --green: #84BC46;
+  --green-light: #CDDC39;
+  --green-dark: #79A84B;
+
+  // variables
+  --background: var(--grey-lighter);
+  --text-color: var(--grey-dark);
+  --text-hint: var(--grey-light);
+  --link-color: var(--blue);
+  --link-color-active: var(--primary-color);
+  --header-bg-color: var(--white);
+  --button-primary-bg-color: var(--primary-color);
+  --button-primary-bg-color-hover: var(--primary-color-hover);
+  --button-primary-bg-color-disabled: var(--primary-color-disabled);
+  --input-error: var(--red);
+}
+
+.dark {
+  --background: var(--white);
+  --text-color: var(--grey-dark);
+  --text-hint: var(--grey-light);
+  --link-color: var(--blue);
+  --link-color-active: var(--white);
+  --header-bg-color: var(--white);
+  --button-primary-bg-color: var(--primary-color);
+  --button-primary-bg-color-hover: var(--primary-color-hover);
+}

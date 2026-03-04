@@ -1,0 +1,27 @@
+.header {
+  background-color: var(--header-bg-color);
+  box-shadow: 0 0 10px var(--grey-light);
+  padding: 16px;
+  position: relative;
+  height: 77px;
+}
+
+.date-time__day,
+.date-time__date,
+.date-time__time
+ {
+  font-size: 14px;
+}
+
+.date-time__day {
+  text-transform: capitalize;
+}
+
+.date-time__date {
+  text-transform: uppercase;
+}
+
+.date-time__icon-clock {
+  color: var(--green);
+  margin-right: 4px;
+}

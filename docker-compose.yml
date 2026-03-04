@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ../fe_inventory
+    container_name: frontend
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - mern
+    depends_on:
+      - backend
+
+  backend:
+    build: ../be_inventory
+    container_name: backend
+    ports:
+      - "4004:4004"
+    networks:
+      - mern
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/mydatabase
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - mern
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  mern:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

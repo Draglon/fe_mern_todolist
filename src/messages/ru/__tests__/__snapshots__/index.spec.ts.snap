@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ru locale matches snapshot 1`] = `
+{
+  "LocaleSwitcher": {
+    "label": "Выбрать язык",
+    "locale": "{locale, select, ru {Русский} ua {Украинский} en {Английский} other {Unknown}}",
+  },
+  "Login": {
+    "layout": {
+      "description": "Авторизоваться - описание",
+      "title": "Авторизоваться",
+    },
+    "title": "Авторизоваться",
+  },
+  "Registration": {
+    "description": "Пожалуйста заполните все поля",
+    "form": {
+      "email": {
+        "errors": {
+          "required": "Пожалуйста, введите электронную почту!",
+        },
+        "label": "Электронная почта",
+        "placeholder": "Введите электронную почту",
+      },
+      "password": {
+        "errors": {
+          "maxLength": "Длина должна быть не более 20 символов",
+          "minLength": "Длина должна быть не менее 6 символов",
+          "required": "Пожалуйста, введите пароль!",
+        },
+        "label": "Пароль",
+        "placeholder": "Введите пароль",
+      },
+      "userName": {
+        "errors": {
+          "required": "Пожалуйста, введите свое имя пользователя!",
+        },
+        "label": "Имя пользователя",
+        "placeholder": "Введите имя пользователя",
+      },
+    },
+    "layout": {
+      "description": "Регистрация - описание",
+      "title": "Регистрация",
+    },
+    "title": "Регистрация",
+  },
+  "TodoList": {
+    "layout": {
+      "description": "Список дел - описание",
+      "title": "Список дел",
+    },
+    "title": "Список дел",
+  },
+  "shared": {
+    "add": "Добавить",
+    "cancel": "Отменить",
+    "confirm": "Подтвердить",
+    "create": "Создать",
+    "delete": "Удалить",
+    "email": "Електронная почта",
+    "logIn": "Авторизоваться",
+    "logout": "Выйти",
+    "modal": {
+      "removeOrder": {
+        "title": "Вы уверены, что хотите удалить этот заказ?",
+      },
+      "removeParish": {
+        "title": "Вы уверены, что хотите удалить этот приход?",
+      },
+      "removeProduct": {
+        "title": "Вы уверены, что хотите удалить этот продукт?",
+      },
+    },
+    "next": "Следующий",
+    "password": "Пароль",
+    "previous": "Предыдущий",
+    "product": "Продукта",
+    "profile": "Профиль",
+    "save": "Сохранять",
+    "search": "Поиск",
+    "settings": "Настройки",
+    "signUp": "Регистрация",
+    "status": {
+      "free": "В наличии",
+      "new": "Новый",
+      "repair": "Ремонт",
+      "reserved": "Зарезервировано",
+      "sold": "Продан",
+      "used": "Б/У",
+    },
+  },
+}
+`;

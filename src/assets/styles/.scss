@@ -1,0 +1,23 @@
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .select-field {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15px;
+
+    .select-field__label {
+      color: var(--grey-light);
+      font-size: 12px;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+
+    .select-field__select {
+      width: 300px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.avatar {
+  position: relative;
+  margin: 20px auto 40px;
+  width: 100px;
+  height: 100px;
+
+  &__wrapper {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__button {
+    box-shadow: 0 0 5px var(--grey);
+    border-radius: 50%;
+    color: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      color: var(--grey);
+    }
+  }
+}

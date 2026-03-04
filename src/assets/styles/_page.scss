@@ -1,0 +1,35 @@
+.page__layout {
+  background-color: var(--black);
+  padding: 0;
+}
+
+.page__main {
+  display: flex;
+  height: calc(100vh - 77px);
+}
+
+.page__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.page__title {
+  font-size: 32px;
+  margin: 0;
+}
+
+.page__sidebar {
+  background-color: var(--white);
+  width: 200px;
+}
+
+.page_content {
+  background-color: var(--grey-lighter);
+  flex: 0 0 100%;
+  padding: 50px 100px;
+  overflow: auto;
+  width: 100%;
+}
