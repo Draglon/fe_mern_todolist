@@ -1,24 +1,24 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import axios from "@/lib/axios.js";
-import deleteOrder from "../deleteOrder";
-import ordersReducer from "../../reducer";
+import deleteTodoListItem from "../deleteTodoListItem";
+import todoListReducer from "../../reducer";
 
-describe("deleteOrder thunk", () => {
+describe("deleteTodoListItem thunk", () => {
   let store;
   let axiosDeleteSpy;
-  const mockOrderId = "1";
-  const mockOrders = [{ _id: mockOrderId }];
+  const mockTodoListId = "1";
+  const mockTodoList = [{ _id: mockTodoListId }];
 
   beforeEach(() => {
     axiosDeleteSpy = jest.spyOn(axios, "delete");
     store = configureStore({
       reducer: {
-        orders: ordersReducer,
+        todoList: todoListReducer,
       },
       preloadedState: {
-        orders: {
-          data: mockOrders,
+        todoList: {
+          data: mockTodoList,
           status: "loading",
           error: null,
         },
@@ -39,23 +39,23 @@ describe("deleteOrder thunk", () => {
       config: {},
       request: {}
     });
-    await store.dispatch(deleteOrder({ id: mockOrderId }));
+    await store.dispatch(deleteTodoListItem({ id: mockTodoListId }));
 
-    expect(axiosDeleteSpy).toHaveBeenCalledWith(`/orders/${mockOrderId}`);
-    expect(store.getState().orders.status).toEqual("loaded");
-    expect(store.getState().orders.data).toEqual([]);
-    expect(store.getState().orders.error).toEqual(null);
+    expect(axiosDeleteSpy).toHaveBeenCalledWith(`/todo_list/${mockTodoListId}`);
+    expect(store.getState().todoList.status).toEqual("loaded");
+    expect(store.getState().todoList.data).toEqual([]);
+    expect(store.getState().todoList.error).toEqual(null);
   });
 
   it("should handle failed DELETE request", async () => {
     const mockError = { message: "Failed to create DELETE request" };
     axiosDeleteSpy.mockRejectedValueOnce({ response: { data: mockError } });
   
-    await store.dispatch(deleteOrder({ id: mockOrderId }));
+    await store.dispatch(deleteTodoListItem({ id: mockTodoListId }));
   
-    expect(axiosDeleteSpy).toHaveBeenCalledWith(`/orders/${mockOrderId}`);
-    expect(store.getState().orders.status).toEqual("error");
-    expect(store.getState().orders.data).toEqual(mockOrders);
-    expect(store.getState().orders.error).toEqual(mockError);
+    expect(axiosDeleteSpy).toHaveBeenCalledWith(`/todo_list/${mockTodoListId}`);
+    expect(store.getState().todoList.status).toEqual("error");
+    expect(store.getState().todoList.data).toEqual(mockTodoList);
+    expect(store.getState().todoList.error).toEqual(mockError);
   });
 });

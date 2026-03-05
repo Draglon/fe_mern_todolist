@@ -7,25 +7,25 @@ import { UPDATE_TODO_LIST_ITEM } from "../types";
 
 type ParamsType = {
   values: {
-    id: string;
+    _id: string;
     todo: string;
     userId: string;
   }
 };
 
-const deleteTodoListOperation = createAsyncThunk(
+const updateTodoListOperation = createAsyncThunk(
   UPDATE_TODO_LIST_ITEM,
   async (params: ParamsType, { rejectWithValue, dispatch }) => {
     try {
       const { values } = params;
-      await axios.patch(todoListItemRoute(values.id), values);
+      const { data } = await axios.patch(todoListItemRoute(values._id), values);
       dispatch(hideModal());
 
-      return values;
+      return data;
     } catch (error: any) {
       return rejectWithValue(error.response.data);
     }
   },
 );
 
-export default deleteTodoListOperation;
+export default updateTodoListOperation;

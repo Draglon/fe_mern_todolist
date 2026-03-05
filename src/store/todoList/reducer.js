@@ -49,7 +49,7 @@ export const todoListSlice = createSlice({
     });
     builder.addCase(updateTodoListItem.fulfilled, (state, action) => {
       state.data = state.data.map((item) => {
-        if (item._id === action.payload.id) {
+        if (item._id == action.payload._id) {
           item.todo = action.payload.todo
         }
         return item;

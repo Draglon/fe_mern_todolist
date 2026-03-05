@@ -1,23 +1,24 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import axios from "@/lib/axios.js";
-import createOrder from "../createOrder";
-import orderReducer from "../../reducer";
+import createTodoListItem from "../createTodoListItem";
+import todoListReducer from "../../reducer";
 
-describe("createOrder thunk", () => {
+describe("createTodoListItem thunk", () => {
   let store;
   let axiosPostSpy;
-  const mockOrder = {
-    title: "Title",
-    description: "Description",
-    date: "Date",
+  const mockTodoList = {
+    values: {
+      userId: "1",
+      todo: "Title",
+    }
   };
 
   beforeEach(() => {
     axiosPostSpy = jest.spyOn(axios, "post");
     store = configureStore({
       reducer: {
-        orders: orderReducer,
+        todoList: todoListReducer,
       },
     });
   });
@@ -27,24 +28,24 @@ describe("createOrder thunk", () => {
   });
 
   it("should handle successful POST request", async () => {
-    axiosPostSpy.mockResolvedValueOnce({ data: mockOrder });
+    axiosPostSpy.mockResolvedValueOnce({ data: mockTodoList });
 
-    await store.dispatch(createOrder(mockOrder));
+    await store.dispatch(createTodoListItem(mockTodoList));
 
-    expect(axiosPostSpy).toHaveBeenCalledWith("/orders", mockOrder);
-    expect(store.getState().orders.status).toBe("loaded");
-    expect(store.getState().orders.data).toEqual(mockOrder);
-    expect(store.getState().orders.error).toEqual(null);
+    expect(axiosPostSpy).toHaveBeenCalledWith("/todo_list", mockTodoList.values);
+    expect(store.getState().todoList.status).toBe("loaded");
+    expect(store.getState().todoList.data).toEqual([mockTodoList]);
+    expect(store.getState().todoList.error).toEqual(null);
   });
 
   it("should handle failed POST request", async () => {
     const mockError = { message: "Failed to create POST request" };
     axiosPostSpy.mockRejectedValueOnce({ response: { data: mockError } });
   
-    await store.dispatch(createOrder(mockOrder));
+    await store.dispatch(createTodoListItem(mockTodoList));
   
-    expect(axiosPostSpy).toHaveBeenCalledWith("/orders", mockOrder);
-    expect(store.getState().orders.status).toBe("error");
-    expect(store.getState().orders.error).toEqual(mockError);
+    expect(axiosPostSpy).toHaveBeenCalledWith("/todo_list", mockTodoList.values);
+    expect(store.getState().todoList.status).toBe("error");
+    expect(store.getState().todoList.error).toEqual(mockError);
   });
 });

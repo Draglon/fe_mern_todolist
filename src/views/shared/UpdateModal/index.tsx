@@ -15,7 +15,7 @@ import Button from "@/views/shared/bootstrap/Button";
 type UpdateProductModalProps = {
   title: string;
   values: {
-    id: string;
+    _id: string;
     todo: string;
     userId: string;
   },

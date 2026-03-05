@@ -35,14 +35,16 @@ const TodoList = () => {
   }, [dispatch, userId]);
 
   const onUpdateItem = (todoItem: any) => () => {
+
+    console.log("todoItem: ", todoItem);
     dispatch(
       showModalAction({
         modalType: "UPDATE_MODAL",
         modalProps: {
           title: tShared("modal.updateItem.title"),
           values: {
-            userId,
-            id: todoItem._id,
+            _id: todoItem._id,
+            userId: todoItem.userId,
             todo: todoItem.todo,
           },
           onUpdate: updateTodoListItem,
