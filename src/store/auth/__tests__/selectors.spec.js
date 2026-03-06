@@ -56,4 +56,19 @@ describe("Auth selectors", () => {
       expect(selectors.isLoadingSelector(state)).toEqual(false);
     });
   });
+
+  describe("userIdSelector()", () => {
+    it("returns user id when status is loading", () => {
+      const initialState = { 
+        data: { _id: '1' },
+        status: "loading",
+      };
+  
+      const state = {
+        auth: initialState,
+      };
+
+      expect(selectors.userIdSelector(state)).toEqual("1");
+    });
+  });
 });

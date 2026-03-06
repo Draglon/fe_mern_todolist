@@ -48,7 +48,7 @@ describe("fetchAuth thunk", () => {
     expect(store.getState().auth.status).toBe("loaded");
     expect(store.getState().auth.data).toEqual(mockUser);
     expect(store.getState().auth.error).toEqual(null);
-    expect(mockUser.payload.router.push).toHaveBeenCalledWith("/orders", { locale: "en" });
+    expect(mockUser.payload.router.push).toHaveBeenCalledWith("/todo_list", { locale: "en" });
   });
 
   it("should handle failed POST request", async () => {

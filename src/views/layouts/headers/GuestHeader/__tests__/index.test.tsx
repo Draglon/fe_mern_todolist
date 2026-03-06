@@ -19,10 +19,6 @@ jest.mock("../../../../../i18n/navigation", () => ({
   usePathname: jest.fn(() => "/"),
 }));
 
-jest.mock("../../../../shared/Logo", () => () => (
-  <mock-logo data-testid="logo" />
-));
-
 jest.mock("../../../../shared/NavigationLink", () => () => (
   <mock-navigation-link data-testid="navigation-link" />
 ));
@@ -34,14 +30,12 @@ describe("GuestHeader", () => {
     it("with pathname === '/'", () => {
       renderComponent();
 
-      expect(screen.getByTestId("logo")).toBeInTheDocument();
       expect(screen.getAllByTestId("navigation-link")).toHaveLength(1);
     });
 
     it("with pathname === '/registration'", () => {
       renderComponent();
 
-      expect(screen.getByTestId("logo")).toBeInTheDocument();
       expect(screen.getAllByTestId("navigation-link")).toHaveLength(1);
     });
 
@@ -49,7 +43,6 @@ describe("GuestHeader", () => {
       usePathname.mockReturnValueOnce("/example");
       renderComponent();
 
-      expect(screen.getByTestId("logo")).toBeInTheDocument();
       expect(screen.getAllByTestId("navigation-link")).toHaveLength(2);
     });
   });

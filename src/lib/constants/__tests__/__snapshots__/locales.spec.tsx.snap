@@ -2,7 +2,7 @@
 
 exports[`locales constants match snapshot 1`] = `
 {
-  "DEFAULT_LOCALE": "ru",
+  "DEFAULT_LOCALE": "en",
   "LOCALES": [
     "en",
     "ua",

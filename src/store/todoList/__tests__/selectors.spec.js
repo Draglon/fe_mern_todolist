@@ -1,31 +1,31 @@
 import * as selectors from "../selectors";
 
 describe("todoList selectors", () => {
-  describe("ordersSelector()", () => {
+  describe("todoListSelector()", () => {
     it("returns data when data is present", () => {
       const initialState = { 
-        data: { data: "data" },
+        data: [{ id: "1", data: "data" }],
         status: "loading",
       };
   
       const state = {
-        orders: initialState,
+        todoList: initialState,
       };
 
-      expect(selectors.ordersSelector(state)).toEqual(initialState.data);
+      expect(selectors.todoListSelector(state)).toEqual(initialState.data);
     });
 
-    it("returns null when data is absent", () => {
+    it("returns [] when data is absent", () => {
       const initialState = { 
-        data: null,
+        data: [],
         status: "pending",
       };
   
       const state = {
-        orders: initialState,
+        todoList: initialState,
       };
 
-      expect(selectors.ordersSelector(state)).toEqual(initialState.data);
+      expect(selectors.todoListSelector(state)).toEqual(initialState.data);
     });
   });
 
@@ -37,7 +37,7 @@ describe("todoList selectors", () => {
       };
   
       const state = {
-        orders: initialState,
+        todoList: initialState,
       };
 
       expect(selectors.isLoadingSelector(state)).toEqual(true);
@@ -50,7 +50,7 @@ describe("todoList selectors", () => {
       };
   
       const state = {
-        orders: initialState,
+        todoList: initialState,
       };
 
       expect(selectors.isLoadingSelector(state)).toEqual(false);

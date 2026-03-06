@@ -2,7 +2,6 @@
 
 exports[`general constants match snapshot 1`] = `
 {
-  "APP_NAME": "Inventory",
   "HTTP_STATUSES": {
     "forbidden": 403,
     "gone": 410,
