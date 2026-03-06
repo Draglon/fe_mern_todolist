@@ -57,39 +57,23 @@ exports[`en locale matches snapshot 1`] = `
     "add": "Add",
     "cancel": "Cancel",
     "confirm": "Confirm",
-    "create": "Create",
     "delete": "Delete",
+    "edit": "Edit",
     "email": "Email",
     "logIn": "Log in",
     "logout": "Log out",
     "modal": {
-      "removeOrder": {
-        "title": "Are you sure you want to remove this Order?",
+      "removeItem": {
+        "title": "Are you sure you want to remove this item?",
       },
-      "removeParish": {
-        "title": "Are you sure you want to remove this parish?",
-      },
-      "removeProduct": {
-        "title": "Are you sure you want to remove this product?",
+      "updateItem": {
+        "title": "Are you sure you want to edit this item?",
       },
     },
-    "next": "Next",
     "password": "Password",
-    "previous": "Previous",
-    "product": "Product",
-    "profile": "Profile",
     "save": "Save",
-    "search": "Search",
-    "settings": "Settings",
     "signUp": "Sign up",
-    "status": {
-      "free": "In stock",
-      "new": "New",
-      "repair": "Repair",
-      "reserved": "Reserved",
-      "sold": "Sold",
-      "used": "Used",
-    },
+    "todo": "Todo",
   },
 }
 `;

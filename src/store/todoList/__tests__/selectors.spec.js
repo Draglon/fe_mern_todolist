@@ -1,6 +1,6 @@
 import * as selectors from "../selectors";
 
-describe("Orders selectors", () => {
+describe("todoList selectors", () => {
   describe("ordersSelector()", () => {
     it("returns data when data is present", () => {
       const initialState = { 

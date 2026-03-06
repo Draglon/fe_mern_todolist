@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
 
 import { hideModal } from "@/store/modal/actions";
-import RemoveProductModal from "../";
+import UpdateModal from "../";
 
 const mockDispatch = jest.fn();
 jest.mock("../../../../store/hooks", () => ({
@@ -14,28 +14,28 @@ jest.mock("../../../../store/hooks", () => ({
 jest.mock("next-intl", () => ({
   useTranslations: jest.fn().mockImplementation(() => (key: string) => {
     const translation: { [key: string]: string } = {
-      "shared.delete": "Delete",
-      "shared.cancel": "Cancel",
+      "todo": "Todo",
+      "edit": "Edit",
+      "cancel": "Cancel",
     };
     return translation[key] || key;
   }),
 }));
 
-describe("RemoveProductModal", () => {
+describe("UpdateModal", () => {
   describe("renders component", () => {
     const defaultProps = {
       title: "Modal title",
-      product: {
-        title: "Product title",
-        photo: "/product_photo_src.png",
-        serialNumber: "Serial number",
-        isNew: false,
+      values: {
+        _id: "1",
+        todo: "Todo title",
+        userId: "1",
       },
-      onRemove: jest.fn(),
+      onUpdate: jest.fn(),
     };
 
     const renderComponent = (props = defaultProps) =>
-      render(<RemoveProductModal {...props} />);
+      render(<UpdateModal {...props} />);
 
     beforeEach(() => {
       jest.clearAllMocks();
@@ -45,11 +45,9 @@ describe("RemoveProductModal", () => {
       renderComponent();
 
       expect(screen.getByText("Modal title")).toBeInTheDocument();
-      expect(screen.getByText("Product title")).toBeInTheDocument();
-      expect(screen.getByText("Serial number")).toBeInTheDocument();
-      expect(screen.getByTestId("indicator")).toBeInTheDocument();
+      expect(screen.getByTestId("todoInput")).toHaveClass("from__input form-control");
       expect(screen.getByTestId("handleClose")).toHaveTextContent("Cancel");
-      expect(screen.getByTestId("handleRemove")).toHaveTextContent("Delete");
+      expect(screen.getByTestId("handleUpdate")).toHaveTextContent("Edit");
     });
 
     it("dispatches hideModal() when press cancel button", async () => {

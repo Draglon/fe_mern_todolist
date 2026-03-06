@@ -23,11 +23,7 @@ describe("updateTodoListItem thunk", () => {
       },
       preloadedState: {
         todoList: {
-          data: [{
-            _id: "1",
-            userId: "1",
-            todo: "Todo 1",
-          }],
+          data: [mockTodoList.values],
           status: "loading",
           error: null,
         },
@@ -41,13 +37,13 @@ describe("updateTodoListItem thunk", () => {
 
   it("should handle successful PATCH request", async () => {
     const mockNewValues = { _id: "1", userId: "1", todo: "Todo 2" };
-    axiosPatchSpy.mockResolvedValueOnce({ data: { values: mockNewValues } });
+    axiosPatchSpy.mockResolvedValueOnce({ data: mockNewValues });
 
     await store.dispatch(updateTodoListItem({ values: mockNewValues }));
 
     expect(axiosPatchSpy).toHaveBeenCalledWith(`/todo_list/${mockNewValues._id}`, mockNewValues);
     expect(store.getState().todoList.status).toBe("loaded");
-    expect(store.getState().todoList.data).toEqual([mockTodoList.values]);
+    expect(store.getState().todoList.data).toEqual([mockNewValues]);
     expect(store.getState().todoList.error).toEqual(null);
   });
 

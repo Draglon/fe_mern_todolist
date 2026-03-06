@@ -25,12 +25,6 @@ describe("RemoveProductModal", () => {
   describe("renders component", () => {
     const defaultProps = {
       title: "Modal title",
-      product: {
-        title: "Product title",
-        photo: "/product_photo_src.png",
-        serialNumber: "Serial number",
-        isNew: false,
-      },
       onRemove: jest.fn(),
     };
 
@@ -45,9 +39,6 @@ describe("RemoveProductModal", () => {
       renderComponent();
 
       expect(screen.getByText("Modal title")).toBeInTheDocument();
-      expect(screen.getByText("Product title")).toBeInTheDocument();
-      expect(screen.getByText("Serial number")).toBeInTheDocument();
-      expect(screen.getByTestId("indicator")).toBeInTheDocument();
       expect(screen.getByTestId("handleClose")).toHaveTextContent("Cancel");
       expect(screen.getByTestId("handleRemove")).toHaveTextContent("Delete");
     });
