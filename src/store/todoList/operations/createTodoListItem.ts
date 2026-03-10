@@ -5,6 +5,7 @@ import { todoListRoute } from "@/lib/apiRoutes";
 import { CREATE_TODO_LIST_ITEM } from "../types";
 
 type ParamsType = {
+  resetForm: ({}: any) => void;
   values: {
     userId: string;
     todo: string;
@@ -14,9 +15,10 @@ type ParamsType = {
 const createTodoListOperation = createAsyncThunk(
   CREATE_TODO_LIST_ITEM,
   async (params: ParamsType, { rejectWithValue }) => {
-    const { values } = params;
+    const { values, resetForm } = params;
     try {
       const { data } = await axios.post(todoListRoute, values);
+      resetForm({ values: { todo: "" } });
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response.data);
