@@ -6,6 +6,7 @@ import { redirect } from "@/i18n/navigation";
 import { loginRoute } from "@/lib/routes";
 import { useAppDispatch } from "@/store/hooks";
 import { logout as logoutAction } from "@/store/auth/actions";
+import { resetTodoList as resetTodoListAction } from "@/store/todoList/actions";
 import Button from "@/views/shared/bootstrap/Button";
 
 const UserHeader = () => {
@@ -15,6 +16,7 @@ const UserHeader = () => {
 
   const onLogout = () => {
     dispatch(logoutAction());
+    dispatch(resetTodoListAction());
     localStorage.removeItem("token");
     redirect({ href: loginRoute, locale });
   };

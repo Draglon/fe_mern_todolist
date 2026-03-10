@@ -8,6 +8,7 @@ describe("createTodoListItem thunk", () => {
   let store;
   let axiosPostSpy;
   const mockTodoList = {
+    resetForm: jest.fn(),
     values: {
       userId: "1",
       todo: "Title",
