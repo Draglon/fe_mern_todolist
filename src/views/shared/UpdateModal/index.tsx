@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { Modal } from "react-bootstrap";
-import { Trash } from "react-bootstrap-icons";
+import { Pencil } from "react-bootstrap-icons";
 import { Form } from "react-bootstrap";
 import { Formik } from "formik";
 
@@ -49,7 +49,7 @@ const UpdateTodoListItemModal = ({
         onSubmit={onSubmit}
         initialValues={values}
       >
-        {({ handleSubmit, handleChange, values, touched, errors }) => (
+        {({ handleSubmit, handleChange, values, touched, errors, isSubmitting, dirty }) => (
           <Form onSubmit={handleSubmit}>
             <Modal.Header className="modal__header" closeButton>
               <Modal.Title
@@ -83,13 +83,14 @@ const UpdateTodoListItemModal = ({
                 {tShared("cancel")}
               </Button>
               <Button
-                className="modal__button--danger"
+                className="modal__button--primary"
                 type="submit"
                 size="lg"
                 variant="light"
+                disabled={isSubmitting || !dirty}
                 data-testid="handleUpdate"
               >
-                <Trash size="14" />
+                <Pencil size="14" />
                 <span>{tShared("edit")}</span>
               </Button>
             </Modal.Footer>

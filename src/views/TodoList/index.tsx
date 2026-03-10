@@ -79,7 +79,7 @@ const TodoList = () => {
               todo: "",
             }}
           >
-            {({ handleSubmit, handleChange, values, touched, errors }) => (
+            {({ handleSubmit, handleChange, values, touched, errors, isSubmitting, dirty }) => (
               <Form className="todo-list__form" onSubmit={handleSubmit}>
                 <InputField
                   id="todo"
@@ -95,6 +95,7 @@ const TodoList = () => {
                 <Button
                   type="submit"
                   data-testid="submitButton"
+                  disabled={isSubmitting || !dirty}
                 >
                   {tShared("add")}
                 </Button>
