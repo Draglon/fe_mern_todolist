@@ -18,7 +18,7 @@ const createTodoListOperation = createAsyncThunk(
     const { values, resetForm } = params;
     try {
       const { data } = await axios.post(todoListRoute, values);
-      resetForm({ values: { todo: "" } });
+      resetForm({ values: { ...values, todo: "" } });
       return data;
     } catch (error: any) {
       return rejectWithValue(error.response.data);
