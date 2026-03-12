@@ -25,7 +25,7 @@ const UserHeader = () => {
     <header className="header">
       <Row>
         <Col lg="12" className="text-right">
-          <Button onClick={onLogout}>
+          <Button onClick={onLogout} dataTestId="btnLogout" dataCy="btn-logout">
             {tShared("logout")}
           </Button>
         </Col>

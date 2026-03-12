@@ -11,6 +11,7 @@ type InputFieldProps = {
   touched: boolean | undefined;
   error: string | boolean | undefined;
   dataTestId: string;
+  dataCy: string;
   onChange: any;
 };
 
@@ -20,21 +21,22 @@ const InputField = ({
   name,
   type,
   value,
-  placeholder,
+  placeholder = "",
   touched,
   error,
   onChange,
   dataTestId,
+  dataCy,
 }: InputFieldProps) => {
   return (
-    <Form.Group className="from__field">
+    <Form.Group className="form__field">
       {label && (
-        <Form.Label className="from__label" htmlFor={id}>
+        <Form.Label className="form__label" htmlFor={id} data-cy={`${dataCy}-label`}>
           {label}
         </Form.Label>
       )}
       <Form.Control
-        className="from__input"
+        className="form__input"
         id={id}
         type={type}
         name={name}
@@ -43,6 +45,7 @@ const InputField = ({
         onChange={onChange}
         isValid={touched && !error}
         data-testid={dataTestId}
+        data-cy={`${dataCy}-input`}
       />
     </Form.Group>
   );

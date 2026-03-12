@@ -18,7 +18,7 @@ const Registration = () => {
 
   return (
     <div className="signup mx-auto">
-      <h1 className="signup__title text-center">{t("Registration.title")}</h1>
+      <h1 className="signup__title text-center" data-cy="title">{t("Registration.title")}</h1>
 
       <Formik
         validationSchema={registrationSchema}
@@ -43,6 +43,7 @@ const Registration = () => {
               touched={touched.email}
               error={errors.email}
               dataTestId="emailInput"
+              dataCy="email"
               onChange={handleChange}
             />
             <InputField
@@ -54,9 +55,15 @@ const Registration = () => {
               touched={touched.password}
               error={errors.password}
               dataTestId="passwordInput"
+              dataCy="password"
               onChange={handleChange}
             />
-            <Button type="submit" className="w-full" data-testid="submitButton">
+            <Button
+              type="submit"
+              className="w-full"
+              dataTestId="submitButton"
+              dataCy="submit-button"
+            >
               {t("shared.signUp")}
             </Button>
           </Form>

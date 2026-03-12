@@ -21,7 +21,7 @@ const LoginForm = () => {
 
   return (
     <div className="login mx-auto">
-      <h1 className="login__title text-center">{t("Login.title")}</h1>
+      <h1 className="login__title text-center" data-cy="title">{t("Login.title")}</h1>
       <Formik
         validationSchema={loginSchema}
         onSubmit={onSubmit}
@@ -31,7 +31,7 @@ const LoginForm = () => {
         }}
       >
         {({ handleSubmit, handleChange, values, touched, errors }) => (
-          <Form className="from login__form" onSubmit={handleSubmit}>
+          <Form className="form login__form" onSubmit={handleSubmit}>
             <InputField
               label={t("shared.email")}
               id="email"
@@ -41,6 +41,7 @@ const LoginForm = () => {
               touched={touched.email}
               error={errors.email}
               dataTestId="emailInput"
+              dataCy="email"
               onChange={handleChange}
             />
             <InputField
@@ -52,13 +53,15 @@ const LoginForm = () => {
               touched={touched.password}
               error={errors.password}
               dataTestId="passwordInput"
+              dataCy="password"
               onChange={handleChange}
             />
             <Button
               type="submit"
               disabled={isLoading}
               className="w-full"
-              data-testid="submitButton"
+              dataTestId="submitButton"
+              dataCy="submit-button"
             >
               {t("shared.logIn")}
             </Button>

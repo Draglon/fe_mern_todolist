@@ -25,6 +25,8 @@ type ButtonProps = {
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
+  dataTestId: string;
+  dataCy: string;
   onClick?: () => void;
 };
 
@@ -34,6 +36,8 @@ function Button({
   className,
   children,
   disabled,
+  dataTestId,
+  dataCy,
   onClick,
   ...props
 }: ButtonProps) {
@@ -44,6 +48,8 @@ function Button({
       variant={variant}
       onClick={onClick}
       disabled={disabled}
+      data-testId={dataTestId}
+      data-cy={dataCy}
       {...props}
     >
       {children}

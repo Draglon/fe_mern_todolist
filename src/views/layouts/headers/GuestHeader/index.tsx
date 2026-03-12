@@ -18,12 +18,12 @@ const GuestHeader = () => {
           <Col col="12" className="text-right">
             {pathname !== loginRoute && (
               <NavigationLink href={loginRoute}>
-                <Button variant="link">{t("shared.logIn")}</Button>
+                <Button variant="link" dataTestId="btnLogIn" dataCy="btn-log-in">{t("shared.logIn")}</Button>
               </NavigationLink>
             )}
             {pathname !== registrationRoute && (
               <NavigationLink href={registrationRoute}>
-                <Button variant="link">{t("shared.signUp")}</Button>
+                <Button variant="link" dataTestId="btnSignUp" dataCy="btn-sign-up">{t("shared.signUp")}</Button>
               </NavigationLink>
             )}
           </Col>
