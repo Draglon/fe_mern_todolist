@@ -20,6 +20,12 @@ import { todoListSelector } from "@/store/todoList/selectors";
 import InputField from "@/views/shared/InputField";
 import Button from "@/views/shared/bootstrap/Button";
 
+type TodoItemProps = {
+  _id: string;
+  userId: string;
+  todo: string;
+}
+
 const TodoList = () => {
   const dispatch = useAppDispatch();
   const t = useTranslations("TodoList");
@@ -34,9 +40,7 @@ const TodoList = () => {
     }
   }, [dispatch, userId]);
 
-  const onUpdateItem = (todoItem: any) => () => {
-
-    console.log("todoItem: ", todoItem);
+  const onUpdateItem = (todoItem: TodoItemProps) => () => {
     dispatch(
       showModalAction({
         modalType: "UPDATE_MODAL",
@@ -53,7 +57,7 @@ const TodoList = () => {
     );
   }
 
-  const onRemoveItem = (todoItem: any) => () => {
+  const onRemoveItem = (todoItem: TodoItemProps) => () => {
     dispatch(
       showModalAction({
         modalType: "REMOVE_MODAL",
@@ -90,12 +94,14 @@ const TodoList = () => {
                   touched={touched.todo}
                   error={errors.todo}
                   dataTestId="todoInput"
+                  dataCy="todo"
                   onChange={handleChange}
                 />
                 <Button
                   type="submit"
-                  data-testid="submitButton"
                   disabled={isSubmitting || !dirty}
+                  dataTestId="submitButton"
+                  dataCy="btn-submit"
                 >
                   {tShared("add")}
                 </Button>
@@ -105,14 +111,25 @@ const TodoList = () => {
         </header>
         <div className="todo-list__content">
           <div className="todo-list__list">
-            {isPresent(todoList) && todoList.map((todoItem: any) => (
+            {/* @ts-ignore */}
+            {isPresent(todoList) && todoList.map((todoItem: TodoItemProps) => (
               <div className="todo-list__item" key={todoItem._id}>
                 <div className="todo-list__description">{todoItem.todo}</div>
                 <div className="todo-list__buttons">
-                  <Button className="button button-edit" onClick={onUpdateItem(todoItem)}>
+                  <Button
+                    className="button button-edit"
+                    onClick={onUpdateItem(todoItem)}
+                    dataTestId="editButton"
+                    dataCy="btn-edit"
+                  >
                     <Pencil />
                   </Button>
-                  <Button className="button button-remove" onClick={onRemoveItem(todoItem)}>
+                  <Button
+                    className="button button-remove"
+                    onClick={onRemoveItem(todoItem)}
+                    dataTestId="removeButton"
+                    dataCy="btn-remove"
+                  >
                     <Trash />
                   </Button>
                 </div>

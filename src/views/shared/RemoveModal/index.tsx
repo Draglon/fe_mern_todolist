@@ -46,7 +46,8 @@ const RemoveTodoListItemModal = ({
           size="lg"
           variant="link"
           onClick={onCloseModal}
-          data-testid="handleClose"
+          dataTestId="handleClose"
+          dataCy="handle-close"
         >
           {t("shared.cancel")}
         </Button>
@@ -55,7 +56,8 @@ const RemoveTodoListItemModal = ({
           size="lg"
           variant="light"
           onClick={onRemove}
-          data-testid="handleRemove"
+          dataTestId="handleRemove"
+          dataCy="handle-remove"
         >
           <Trash size="14" />
           <span>{t("shared.delete")}</span>

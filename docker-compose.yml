@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   frontend:
-    build: ../fe_inventory
+    build: ../fe_mern_todolist
     container_name: frontend
     stdin_open: true
     ports:
@@ -13,7 +13,7 @@ services:
       - backend
 
   backend:
-    build: ../be_inventory
+    build: ../be_mern_todolist
     container_name: backend
     ports:
       - "4000:4000"

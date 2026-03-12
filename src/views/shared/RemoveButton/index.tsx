@@ -13,7 +13,8 @@ const RemoveButton = ({ onClick }: RemoveButtonProps) => {
       className="btn-remove"
       variant="link"
       onClick={onClick}
-      data-testid="btnRemove"
+      dataTestId="btnRemove"
+      dataCy="btn-remove"
     >
       <Trash className="icon-remove" size="14" />
     </Button>

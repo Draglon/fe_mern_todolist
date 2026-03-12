@@ -69,6 +69,7 @@ const UpdateTodoListItemModal = ({
                 touched={touched.todo}
                 error={errors.todo}
                 dataTestId="todoInput"
+                dataCy="todo"
                 onChange={handleChange}
               />
             </Modal.Body>
@@ -78,7 +79,8 @@ const UpdateTodoListItemModal = ({
                 size="lg"
                 variant="link"
                 onClick={onCloseModal}
-                data-testid="handleClose"
+                dataTestId="handleClose"
+                dataCy="handle-close"
               >
                 {tShared("cancel")}
               </Button>
@@ -88,7 +90,8 @@ const UpdateTodoListItemModal = ({
                 size="lg"
                 variant="light"
                 disabled={isSubmitting || !dirty}
-                data-testid="handleUpdate"
+                dataTestId="handleUpdate"
+                dataCy="handle-update"
               >
                 <Pencil size="14" />
                 <span>{tShared("edit")}</span>
